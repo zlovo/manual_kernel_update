@@ -92,3 +92,5 @@ Vagrant.configure("2") do |config|
 end
 
 ## At vagrantfile changed from :box_name => "centos-7-5", to :box_name => "zlovo/centos7-5
+## added .gitignore file ; put .vagratfile directory with gitignore, then used git rm --cached -r .vagrantfile
+
