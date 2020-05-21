@@ -70,7 +70,7 @@ CentOS Linux release 7.8.2003 (Core)
             Kernel: Linux 3.10.0-1127.el7.x86_64
       Architecture: x86-64
 
-### Loeded generated vagrant box with new kernel 
+### Loaded generated vagrant box with new kernel 
 [vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
          Icon name: computer-vm
@@ -91,4 +91,4 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "1.0"
 end
 
-
+## At vagrantfile changed from :box_name => "centos-7-5", to :box_name => "zlovo/centos7-5
