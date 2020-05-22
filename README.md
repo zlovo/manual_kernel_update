@@ -238,6 +238,8 @@ vagrant@kernel-update ~]$ hostnamectl
 Kernells are differnt and kernell for centos-7-5 box is 5.6.13-1.el7.elrepo.x86_64 
 So this means we have result as planned 
 
+* Load created box into Vagrant Cloud 
+Use Vagrant Cloud website UI, straitforvard. 
 
 
 
