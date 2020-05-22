@@ -182,7 +182,21 @@ change directory to packer and run
 ```
 packer build centos.json
 ```
+result => new file was created in current directory `centos-7.7.1908-kernel-5-x86_64-Minimal.box`
 
+* import created box into vagrant 
+
+check current boxes 
+```
+vagrant box list
+centos/7        (virtualbox, 2004.01)
+```
+Import `vagrant box add --name centos-7-5 centos-7.7.1908-kernel-5-x86_64-Minimal.box`
+check current boxes 
+```
+vagrant box list
+centos/7        (virtualbox, 2004.01)
+centos-7-5      (virtualbox, 0)
 
 
 
