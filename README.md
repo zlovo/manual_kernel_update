@@ -1,3 +1,11 @@
+# Homework Lesson 1 
+
+## Steps made 
+* Test machine (Lenovo Notebook e11) 
+* Installed CentosOS 7 on baremetal 
+* Installed git, VSCode, VirtualBox-6.1, 
+
+
 [alexeyv@desktop-i3gm60g manual_kernel_update]$ vagrant ssh
 Last login: Wed May 20 12:10:32 2020 from 10.0.2.2
 [vagrant@kernel-update ~]$ uname -r
