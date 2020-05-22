@@ -87,9 +87,9 @@ pull new os info with hostnamectl
  vagrant@kernel-update ~]$ cat /proc/version
 Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)) #1 SMP Tue May 19 12:17:13 EDT 2020
 ```
+
 * Check packer provision config for Packer
 ```
-
 {
   "variables": {
     "artifact_description": "CentOS 7.7 with kernel 5.x",
@@ -170,7 +170,21 @@ Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.
   ]
 }
 ```
-problems solved - new 
+here we needed to change into these new download link and cheksum  
+```
+"iso_url": "http://mirror.yandex.ru/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso",
+      "iso_checksum": "9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d"
+```
+because in supplied config there was a link to expired release, so next release used 
+
+* packer build
+change directory to packer and run 
+```
+packer build centos.json
+```
+
+
+
 
 
 
