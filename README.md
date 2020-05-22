@@ -256,11 +256,4 @@ git Added and commited files from local directory manual_kernell_update
 * Create and write README.MD
 Used markdown languade. 
 
-# End
-
-
-
-
-## At vagrantfile changed from :box_name => "centos-7-5", to :box_name => "zlovo/centos7-5
-## added .gitignore file ; put .vagratfile directory with gitignore, then used git rm --cached -r .vagrantfile
-
+## End
