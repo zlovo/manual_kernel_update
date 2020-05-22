@@ -248,14 +248,18 @@ I can use this box anywhere!
 agrantfile change :box_name => "centos-7-5", into :box_name => "zlovo/centos7-5"
 check the box file is being downloaded from zlovo/centos7-5 
 
+* Submit home work 
+Create .gitignore file and add there .vagrantfile directory
+deleted files shouldn't be commited with `git rm --cached -r .vagrantfile` command 
+git Added and commited files from local directory manual_kernell_update 
+
+* Create and write README.MD
+Used markdown languade. 
+
+# End
 
 
 
-
-Vagrant.configure("2") do |config|
-  config.vm.box = "zlovo/centos7-5"
-  config.vm.box_version = "1.0"
-end
 
 ## At vagrantfile changed from :box_name => "centos-7-5", to :box_name => "zlovo/centos7-5
 ## added .gitignore file ; put .vagratfile directory with gitignore, then used git rm --cached -r .vagrantfile
