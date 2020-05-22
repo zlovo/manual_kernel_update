@@ -11,7 +11,7 @@
 * Opened directory `manual_kernel_update`
 
 _next steps description have more detailes_
-* Firing up VM and ssh into it
+* Start up cloned vagrant configuration VM and ssh into it
 
 run `vagrant up` result => no error messages, 
 
@@ -23,6 +23,9 @@ result => `Last login: Wed May 20 12:10:32 2020 from 10.0.2.2`
 
 this mean we did ssh succesfully 
 
+* Check current kernell 
+
+```
 [vagrant@kernel-update ~]$ uname -r
 3.10.0-1127.el7.x86_64
 
