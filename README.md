@@ -8,7 +8,7 @@
 ## Steps as per homework description
 * Forked git from dmitry-lyutenko/manual_kernel_update into my account 
 * Cloned git  zlovo /manual_kernel_update onto local machine 
-* Opened 
+* Opened directory `manual_kernel_update`
 
 ##
 
