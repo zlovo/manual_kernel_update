@@ -29,10 +29,28 @@ this mean we did ssh succesfully
 [vagrant@kernel-update ~]$ uname -r
 3.10.0-1127.el7.x86_64
 
-Last login: Wed May 20 12:21:36 2020 from 10.0.2.2
+```
+* grub update and check if new kernell is up and running 
+```
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+sudo grub2-set-default 0
+sudo reboot
+```
+result => new kernell 
+
+lets `vagrant ssh`
+
+result => `Last login: Wed May 20 12:21:36 2020 from 10.0.2.2` 
+
+check kernell name 
+
+```
 [vagrant@kernel-update ~]$ uname -r
 5.6.14-1.el7.elrepo.x86_64
+```
 
+check os release 
+```
 [vagrant@kernel-update ~]$ sudo cat /etc/os-release file
 NAME="CentOS Linux"
 VERSION="7 (Core)"
@@ -49,6 +67,7 @@ CENTOS_MANTISBT_PROJECT="CentOS-7"
 CENTOS_MANTISBT_PROJECT_VERSION="7"
 REDHAT_SUPPORT_PRODUCT="centos"
 REDHAT_SUPPORT_PRODUCT
+```
 
 [vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
@@ -61,6 +80,7 @@ REDHAT_SUPPORT_PRODUCT
        CPE OS Name: cpe:/o:centos:centos:7
             Kernel: Linux 5.6.14-1.el7.elrepo.x86_64
       Architecture: x86-64
+ 
 
 vagrant@kernel-update ~]$ cat /proc/version
 Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)) #1 SMP Tue May 19 12:17:13 EDT 2020
