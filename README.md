@@ -17,6 +17,7 @@ run `vagrant up` result => no error messages,
 virtual machine is up and running 
 
 ssh to vm `[alexeyv@desktop-i3gm60g manual_kernel_update]$ vagrant ssh`
+
 result => `Last login: Wed May 20 12:10:32 2020 from 10.0.2.2`
 
 this mean we did ssh succesfully 
