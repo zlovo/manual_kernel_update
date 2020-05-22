@@ -10,9 +10,9 @@
 * Cloned git  zlovo /manual_kernel_update onto local machine 
 * Opened directory `manual_kernel_update`
 
-##
+_next steps description have more detailes_
 
-
+run `vagrant up`
 
 [alexeyv@desktop-i3gm60g manual_kernel_update]$ vagrant ssh
 Last login: Wed May 20 12:10:32 2020 from 10.0.2.2
