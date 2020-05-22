@@ -204,13 +204,8 @@ In two different directories initiated two different vagrants 1) with `centos/7`
 ssh to each of them and check with `hostnamectl`
 
 Results =>
-
+for centos/7 box
 ```
-
-
-
-
-##old kernel
 [vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
          Icon name: computer-vm
@@ -222,9 +217,10 @@ Results =>
        CPE OS Name: cpe:/o:centos:centos:7
             Kernel: Linux 3.10.0-1127.el7.x86_64
       Architecture: x86-64
-
-### Loaded generated vagrant box with new kernel 
-[vagrant@kernel-update ~]$ hostnamectl
+```
+for centos-7-5 box
+```
+vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
          Icon name: computer-vm
            Chassis: vm
@@ -238,6 +234,12 @@ Results =>
 
 [vagrant@kernel-update ~]$ uname -r
 5.6.13-1.el7.elrepo.x86_64
+```
+Kernells are differnt and kernell for centos-7-5 box is 5.6.13-1.el7.elrepo.x86_64 
+So this means we have result as planned 
+
+
+
 
 Vagrant.configure("2") do |config|
   config.vm.box = "zlovo/centos7-5"
