@@ -68,7 +68,8 @@ CENTOS_MANTISBT_PROJECT_VERSION="7"
 REDHAT_SUPPORT_PRODUCT="centos"
 REDHAT_SUPPORT_PRODUCT
 ```
-
+pull os infor with hostnamectl
+```
 [vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
          Icon name: computer-vm
@@ -80,10 +81,12 @@ REDHAT_SUPPORT_PRODUCT
        CPE OS Name: cpe:/o:centos:centos:7
             Kernel: Linux 5.6.14-1.el7.elrepo.x86_64
       Architecture: x86-64
- 
-
+ ```
+ Identify current Linux release
+ ```
 vagrant@kernel-update ~]$ cat /proc/version
 Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)) #1 SMP Tue May 19 12:17:13 EDT 2020
+'''
 
 
 [vagrant@kernel-update ~]$ uname -r -v
