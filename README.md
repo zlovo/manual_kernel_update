@@ -240,6 +240,15 @@ So this means we have result as planned
 
 * Load created box into Vagrant Cloud 
 Use Vagrant Cloud website UI, straitforvard. 
+Providers field value shoud be `virtualbox`
+Result => generated `zlovo/centos7-5`
+I can use this box anywhere! 
+
+* Update local vagrantfile 
+agrantfile change :box_name => "centos-7-5", into :box_name => "zlovo/centos7-5"
+check the box file is being downloaded from zlovo/centos7-5 
+
+
 
 
 
