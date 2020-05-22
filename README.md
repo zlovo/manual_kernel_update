@@ -2,7 +2,7 @@
 
 ## Steps made 
 * Test machine (Lenovo Notebook e11) 
-* Installed CentosOS 7 on baremetal 
+* Installed CentosOS 7 Linux 3.10.0-1127.8.2.el7.x86_64 on baremetal 
 * Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9
 * Forked git from dmitry-lyutenko/manual_kernel_update into my account 
 * Cloned git  zlovo /manual_kernel_update onto local machine 
