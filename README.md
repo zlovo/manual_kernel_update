@@ -3,7 +3,10 @@
 ## Steps made 
 * Test machine (Lenovo Notebook e11) 
 * Installed CentosOS 7 on baremetal 
-* Installed git, VSCode, VirtualBox-6.1, 
+* Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9
+* Forked git from dmitry-lyutenko/manual_kernel_update into my account 
+* Cloned git  zlovo /manual_kernel_update onto local machine 
+* 
 
 
 [alexeyv@desktop-i3gm60g manual_kernel_update]$ vagrant ssh
