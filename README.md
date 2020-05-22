@@ -197,7 +197,15 @@ check current boxes
 vagrant box list
 centos/7        (virtualbox, 2004.01)
 centos-7-5      (virtualbox, 0)
+```
+* Test of new Vagrant box image 
+In two different directories initiated two different vagrants 1) with `centos/7` box 2) with `centos-7-5` box 
 
+ssh to each of them and check with `hostnamectl`
+
+Results =>
+
+```
 
 
 
