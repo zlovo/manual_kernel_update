@@ -84,9 +84,93 @@ pull new os info with hostnamectl
  ```
  Identify current Linux release
  ```
-vagrant@kernel-update ~]$ cat /proc/version
+ vagrant@kernel-update ~]$ cat /proc/version
 Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)) #1 SMP Tue May 19 12:17:13 EDT 2020
-'''
+```
+* Check packer provision config for Packer
+```
+
+{
+  "variables": {
+    "artifact_description": "CentOS 7.7 with kernel 5.x",
+    "artifact_version": "7.7.1908",
+    "image_name": "centos-7.7"
+  },
+
+  "builders": [
+    {
+      "name": "{{user `image_name`}}",
+      "type": "virtualbox-iso",
+      "vm_name": "packer-centos-vm",
+
+      "boot_wait": "10s",
+      "disk_size": "10240",
+      "guest_os_type": "RedHat_64",
+      "http_directory": "http",
+
+      "iso_url": "http://mirror.yandex.ru/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso",
+      "iso_checksum": "9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d",
+      "iso_checksum_type": "sha256",
+
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/vagrant.ks<enter><wait>"
+      ],
+
+      "shutdown_command": "sudo -S /sbin/halt -h -p",
+      "shutdown_timeout" : "5m",
+
+      "ssh_wait_timeout": "20m",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_pty": true,
+
+      "output_directory": "builds",
+
+      "vboxmanage": [
+        [  "modifyvm",  "{{.Name}}",  "--memory",  "1024" ],
+        [  "modifyvm",  "{{.Name}}",  "--cpus",  "2" ]
+      ],
+
+      "export_opts":
+      [
+        "--manifest",
+        "--vsys", "0",
+        "--description", "{{user `artifact_description`}}",
+        "--version", "{{user `artifact_version`}}"
+      ]
+
+    }
+  ],
+
+  "post-processors": [
+    {
+      "output": "centos-{{user `artifact_version`}}-kernel-5-x86_64-Minimal.box",
+      "compression_level": "7",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "{{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "start_retry_timeout": "1m",
+      "expect_disconnect": true,
+      "pause_before": "20s",
+      "override": {
+        "{{user `image_name`}}" : {
+          "scripts" :
+            [
+              "scripts/stage-1-kernel-update.sh",
+              "scripts/stage-2-clean.sh"
+            ]
+        }
+      }
+    }
+  ]
+}
+```
+problems solved - new 
 
 
 
