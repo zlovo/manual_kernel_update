@@ -11,7 +11,7 @@
 * Opened directory `manual_kernel_update`
 
 _next steps description have more detailes_
-* Start up cloned vagrant configuration VM and ssh into it
+* ### Start up cloned vagrant configuration VM and ssh into it
 
 run `vagrant up` result => no error messages, 
 
