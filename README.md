@@ -42,14 +42,14 @@ lets `vagrant ssh`
 
 result => `Last login: Wed May 20 12:21:36 2020 from 10.0.2.2` 
 
-check kernell name 
+check new kernell name 
 
 ```
 [vagrant@kernel-update ~]$ uname -r
 5.6.14-1.el7.elrepo.x86_64
 ```
 
-check os release 
+check new os release 
 ```
 [vagrant@kernel-update ~]$ sudo cat /etc/os-release file
 NAME="CentOS Linux"
@@ -68,7 +68,7 @@ CENTOS_MANTISBT_PROJECT_VERSION="7"
 REDHAT_SUPPORT_PRODUCT="centos"
 REDHAT_SUPPORT_PRODUCT
 ```
-pull os infor with hostnamectl
+pull new os info with hostnamectl
 ```
 [vagrant@kernel-update ~]$ hostnamectl
    Static hostname: kernel-update
@@ -89,22 +89,6 @@ Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.
 '''
 
 
-[vagrant@kernel-update ~]$ uname -r -v
-5.6.14-1.el7.elrepo.x86_64 #1 SMP Tue May 19 12:17:13 EDT 2020
-[vagrant@kernel-update ~]$ cat /etc/centos-release 
-CentOS Linux release 7.8.2003 (Core)
-
-[vagrant@kernel-update ~]$ hostnamectl
-   Static hostname: kernel-update
-         Icon name: computer-vm
-           Chassis: vm
-        Machine ID: cc811af22277d5419168e5d782665d8b
-           Boot ID: 2ac3e414d4754b3784c772a7c500a301
-    Virtualization: kvm
-  Operating System: CentOS Linux 7 (Core)
-       CPE OS Name: cpe:/o:centos:centos:7
-            Kernel: Linux 5.6.14-1.el7.elrepo.x86_64
-      Architecture: x86-64
 
 ##old kernel
 [vagrant@kernel-update ~]$ hostnamectl
