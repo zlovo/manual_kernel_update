@@ -1,12 +1,17 @@
 # Homework Lesson 1 
 
-## Steps made 
+## Test hardware and software provisioning steps made 
 * Test machine (Lenovo Notebook e11) 
 * Installed CentosOS 7 Linux 3.10.0-1127.8.2.el7.x86_64 on baremetal 
-* Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9
+* Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9, Packer 1.4.4
+
+## Steps as per homework description
 * Forked git from dmitry-lyutenko/manual_kernel_update into my account 
 * Cloned git  zlovo /manual_kernel_update onto local machine 
-* 
+* Opened 
+
+##
+
 
 
 [alexeyv@desktop-i3gm60g manual_kernel_update]$ vagrant ssh
