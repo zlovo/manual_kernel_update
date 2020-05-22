@@ -1,16 +1,16 @@
 # Homework Lesson 1 
 
 ## Test hardware and software provisioning steps made 
-* Test machine (Lenovo Notebook e11) 
-* Installed CentosOS 7 Linux 3.10.0-1127.8.2.el7.x86_64 on baremetal 
-* Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9, Packer 1.4.4
+* ### Test machine (Lenovo Notebook e11) 
+* ### Installed CentosOS 7 Linux 3.10.0-1127.8.2.el7.x86_64 on baremetal 
+* ### Installed git, VSCode, VirtualBox-6.1,Vagrant 2.2.9, Packer 1.4.4
 
 ## Steps as per homework description
-* Forked git from dmitry-lyutenko/manual_kernel_update into my account 
-* Cloned git  zlovo /manual_kernel_update onto local machine 
-* Opened directory `manual_kernel_update`
+* ### Forked git from dmitry-lyutenko/manual_kernel_update into my account 
+* ### Cloned git  zlovo /manual_kernel_update onto local machine 
+* ### Opened directory `manual_kernel_update`
 
-_next steps description have more detailes_
+_## next steps description have more detailes ##_
 * ### Start up cloned vagrant configuration VM and ssh into it
 
 run `vagrant up` result => no error messages, 
@@ -23,14 +23,14 @@ result => `Last login: Wed May 20 12:10:32 2020 from 10.0.2.2`
 
 this mean we did ssh succesfully 
 
-* Check current kernell 
+* ### Check current kernell 
 
 ```
 [vagrant@kernel-update ~]$ uname -r
 3.10.0-1127.el7.x86_64
 
 ```
-* grub update and check if new kernell is up and running 
+* ### grub update and check if new kernell is up and running 
 ```
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sudo grub2-set-default 0
@@ -88,7 +88,7 @@ pull new os info with hostnamectl
 Linux version 5.6.14-1.el7.elrepo.x86_64 (mockbuild@Build64R7) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)) #1 SMP Tue May 19 12:17:13 EDT 2020
 ```
 
-* Check packer provision config for Packer
+* ### Check packer provision config for Packer
 ```
 {
   "variables": {
@@ -177,14 +177,14 @@ here we needed to change into these new download link and cheksum
 ```
 because in supplied config there was a link to expired release, so next release used 
 
-* packer build
+* ### packer build
 change directory to packer and run 
 ```
 packer build centos.json
 ```
 result => new file was created in current directory `centos-7.7.1908-kernel-5-x86_64-Minimal.box`
 
-* import created box into vagrant 
+* ### import created box into vagrant 
 
 check current boxes 
 ```
@@ -198,7 +198,7 @@ vagrant box list
 centos/7        (virtualbox, 2004.01)
 centos-7-5      (virtualbox, 0)
 ```
-* Test of new Vagrant box image 
+* ### Test of new Vagrant box image 
 In two different directories initiated two different vagrants 1) with `centos/7` box 2) with `centos-7-5` box 
 
 ssh to each of them and check with `hostnamectl`
@@ -238,17 +238,17 @@ vagrant@kernel-update ~]$ hostnamectl
 Kernells are differnt and kernell for centos-7-5 box is 5.6.13-1.el7.elrepo.x86_64 
 So this means we have result as planned 
 
-* Load created box into Vagrant Cloud 
+* ### Load created box into Vagrant Cloud 
 Use Vagrant Cloud website UI, straitforvard. 
 Providers field value shoud be `virtualbox`
 Result => generated `zlovo/centos7-5`
 I can use this box anywhere! 
 
-* Update local vagrantfile 
+* ### Update local vagrantfile 
 agrantfile change :box_name => "centos-7-5", into :box_name => "zlovo/centos7-5"
 check the box file is being downloaded from zlovo/centos7-5 
 
-* Submit home work 
+* ### Submit home work 
 Create .gitignore file and add there .vagrantfile directory
 deleted files shouldn't be commited with `git rm --cached -r .vagrantfile` command 
 git Added and commited files from local directory manual_kernell_update 
